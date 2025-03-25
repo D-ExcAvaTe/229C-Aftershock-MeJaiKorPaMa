@@ -1,15 +1,20 @@
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
+using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
-public class Menumanager : MonoBehaviour
+public class SettingsMenu : MonoBehaviour
 {
     public GameObject settingsPanel;
+    public Slider volumeSlider;
     public Dropdown resolutionDropdown;
-    Resolution[] resolutions;
-    
+    public Slider mouseSensitivitySlider;
+    public AudioMixer audioMixer;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private Resolution[] resolutions;
+    private float mouseSensitivity = 1.0f;
+
     void Start()
     {
         resolutions = Screen.resolutions;
@@ -30,22 +35,44 @@ public class Menumanager : MonoBehaviour
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ToggleMenumanager();
+            ToggleSettingsMenu();
         }
     }
-    public void ToggleMenumanager()
+
+    public void ToggleSettingsMenu()
     {
-        settingsPanel.SetActive(!settingsPanel.activeSelf);
+        bool isActive = !settingsPanel.activeSelf;
+        settingsPanel.SetActive(isActive);
+
+        if (isActive)
+        {
+            Time.timeScale = 0; 
+        }
+        else
+        {
+            Time.timeScale = 1; 
+        }
+        
     }
+
+    public void SetVolume(float volume)
+    {
+        audioMixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20);
+    }
+
     public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
+    public void SetMouseSensitivity(float sensitivity)
+    {
+        mouseSensitivity = sensitivity;
+        PlayerPrefs.SetFloat("MouseSensitivity", sensitivity);
     }
 }
