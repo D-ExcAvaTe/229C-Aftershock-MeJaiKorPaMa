@@ -1,7 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MouseLook : MonoBehaviour
 {
+    public Transform playerBody;
+    public Slider sensitivitySlider; 
+    public float mouseSensitivity = 1.0f;
+
+
     [SerializeField] private float mouseSens = 500f, minRotate = -90, maxRotate = 90;
     [SerializeField] private GameObject playerObject;
     private Camera playerCamera;
@@ -15,6 +21,10 @@ public class MouseLook : MonoBehaviour
 
     void Start()
     {
+        mouseSensitivity = PlayerPrefs.GetFloat("currentSensitivity", 100);
+        sensitivitySlider.value = mouseSensitivity / 10;
+        
+
         playerCamera = Camera.main;
         
         Cursor.lockState = CursorLockMode.Locked;
@@ -45,5 +55,10 @@ public class MouseLook : MonoBehaviour
             playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, zoomFOV, zoomSpeed * Time.deltaTime);
         else
             playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, defaultFOV, zoomSpeed * Time.deltaTime);
+    }
+
+    public void SetMouseSensitivity(float sensitivity)
+    {
+        mouseSensitivity = sensitivity * 10;
     }
 }

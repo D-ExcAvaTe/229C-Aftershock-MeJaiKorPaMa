@@ -252,11 +252,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 106
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 106
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1560,7 +1560,7 @@ AudioSource:
   m_GameObject: {fileID: 318081080}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: c21d09781f034ce4ea372779a4126e55, type: 2}
   m_audioClip: {fileID: 8300000, guid: b79512337fe18f04ca113d7b07238629, type: 3}
   m_Resource: {fileID: 8300000, guid: b79512337fe18f04ca113d7b07238629, type: 3}
   m_PlayOnAwake: 1
@@ -1817,6 +1817,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ed6fcc1c473b1e40a06930bc4fd172d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerBody: {fileID: 399956689}
+  sensitivitySlider: {fileID: 1988105810}
+  mouseSensitivity: 1
   mouseSens: 200
   minRotate: -90
   maxRotate: 90
@@ -2618,7 +2621,7 @@ MonoBehaviour:
       - m_Target: {fileID: 2141914477}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetResolution
-        m_Mode: 3
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3134,17 +3137,17 @@ MonoBehaviour:
   m_FillRect: {fileID: 28605674}
   m_HandleRect: {fileID: 1020448372}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2141914477}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetVolume
-        m_Mode: 4
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7335,7 +7338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.019607844}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10319,15 +10322,15 @@ MonoBehaviour:
   m_FillRect: {fileID: 1747247440}
   m_HandleRect: {fileID: 281335206}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: 1
+  m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2141914477}
-        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
+      - m_Target: {fileID: 330585548}
+        m_TargetAssemblyTypeName: MouseLook, Assembly-CSharp
         m_MethodName: SetMouseSensitivity
         m_Mode: 4
         m_Arguments:
@@ -11555,7 +11558,6 @@ MonoBehaviour:
   settingsPanel: {fileID: 1507479532}
   volumeSlider: {fileID: 607894218}
   resolutionDropdown: {fileID: 467002488}
-  mouseSensitivitySlider: {fileID: 1988105810}
   audioMixer: {fileID: 24100000, guid: c21d09781f034ce4ea372779a4126e55, type: 2}
 --- !u!1001 &635984054050830680
 PrefabInstance:
