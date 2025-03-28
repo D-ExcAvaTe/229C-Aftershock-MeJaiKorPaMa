@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Reward4
   m_EditorClassIdentifier: 
   itemName: "\u0E41\u0E2D\u0E19\u0E14\u0E23\u0E2D\u0E22 14"
-  itemAmount: 1
+  sellPrice: 200
   itemPrefab: {fileID: 8578193736609009677, guid: b774c890a846c9f4d85f6848e806e816, type: 3}

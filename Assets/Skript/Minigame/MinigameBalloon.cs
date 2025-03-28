@@ -66,6 +66,7 @@ public class MinigameBalloon : Minigame
                 item.Init(dartItemData);
             }
 
+            ballonPopped = 0;
             ShowInstruction("ใช้ลูกดอก 3 ลูกปาลูกโป่ง\nให้แตก 3 ลูก เพื่อรับรางวัล");
         }
     }
@@ -75,14 +76,18 @@ public class MinigameBalloon : Minigame
         dartShooted++;
         if (dartShooted >= maxDart)
         {
-            if (ballonPopped >= 3) DropRewards();
-            
             dartShooted = 0;
-            ballonPopped = 0;
             
             ResetGame();
             
             canStart = true;
         }
+    }
+
+    protected override void ResetGame()
+    {
+        if (ballonPopped >= 3) DropRewards();
+        ballonPopped = 0;
+        base.ResetGame();
     }
 }

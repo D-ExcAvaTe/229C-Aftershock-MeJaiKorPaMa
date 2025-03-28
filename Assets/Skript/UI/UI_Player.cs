@@ -16,14 +16,14 @@ public class UI_Player : MonoBehaviour
     {
         //if (player.currentDart) 
         textThrowForce.text = $"{player.throwForce}";
-        textMoney.text = $"{PlayerData.instance.GetMoney} บาท";
+        textMoney.text = $"เงิน: {PlayerData.instance.GetMoney}฿\nโควต้า: {PlayerData.instance.quotaMoney}฿";
         textThrowLeft.text = $"คลิกซ้าย ({PlayerController.instance.dartForceAdded}/{PlayerController.instance.maxDartForceAdd})";
         //else textThrowForce.text = "";
 
         if (PlayerController.instance.mainHandPrefab != null)
         {
             textMainHand.gameObject.SetActive(true);
-            textMainHand.text = $"{PlayerController.instance.mainHandItem.itemName}\n\"Q\" ดรอป";
+            textMainHand.text = $"{PlayerController.instance.mainHandItem.itemName} ราคาขาย: {PlayerController.instance.mainHandItem.sellPrice}฿\n\"Q\" ดรอป";
         } else textMainHand.gameObject.SetActive(false);
 
     }

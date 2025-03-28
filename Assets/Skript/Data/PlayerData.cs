@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
+    public int startingMoney = 500, quotaMoney = 2000;
     private int money;
 
     public int GetMoney => money;
@@ -19,7 +20,7 @@ public class PlayerData : MonoBehaviour
 
     private void Start()
     {
-        SetMoney(500);
+        SetMoney(startingMoney);
     }
 
     public bool TakeMoney(int _cost)

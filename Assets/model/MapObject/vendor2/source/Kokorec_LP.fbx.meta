@@ -3,7 +3,37 @@ guid: c46db6203f922f041ae9dbce66dc6a9f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Auto_Mid_Tex
+    second: {fileID: 2100000, guid: af3ff308255420648ae85678a05c919d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Auto_Mid_Tex_02
+    second: {fileID: 2100000, guid: 7738418af27844847a26a83a47c2ab42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ayran
+    second: {fileID: 2100000, guid: c64592627e3052c4ea622d55c51a9dc1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Custom_Tex_01
+    second: {fileID: 2100000, guid: d2ac1d18f0f434b45a22603eee2bc550, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metals
+    second: {fileID: 2100000, guid: 19060ee5a7c90d547bd373e8da7f1325, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tires
+    second: {fileID: 2100000, guid: 8c8d1623c0fb90d469787486dc16a067, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
