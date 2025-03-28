@@ -57,7 +57,8 @@ public class PlayerData : MonoBehaviour
 
     private void Update()
     {
-        if (GetMoney >= quotaMoney) GameClear();
+        if (GetMoney >= quotaMoney && !isGameOver) GameClear();
+        Debug.Log($"{GetMoney}>={quotaMoney} && !{isGameOver}");
     }
 
     public void GameClear()
@@ -65,8 +66,6 @@ public class PlayerData : MonoBehaviour
         gameClearPanel.SetActive(true);
         textHighScore[1].text = $"เงินที่ได้รับ: {GetMoney} / {quotaMoney}฿";
         
-        
-        if(isGameOver) return;
         AudioManager.instance.PlaySFX(5);
         isGameOver = true;
     }

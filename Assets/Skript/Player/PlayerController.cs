@@ -74,7 +74,9 @@ public class PlayerController : MonoBehaviour
         MainHandHandle();
         MovementHandle();
         GravityAndJumpHandle();
-        
+
+        PlayerData.instance.enabled = true;
+
         if(MouseLook.instance.lastLookedItem == null) return;
         if (Input.GetKeyDown(MouseLook.instance.lastLookedItem.collectKey) && canCollect && MouseLook.instance != null)
         {
