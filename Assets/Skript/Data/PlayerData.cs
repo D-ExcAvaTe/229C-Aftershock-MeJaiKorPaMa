@@ -62,12 +62,12 @@ public class PlayerData : MonoBehaviour
 
     public void GameClear()
     {
-        if(isGameOver) return;
-        
         gameClearPanel.SetActive(true);
         textHighScore[1].text = $"เงินที่ได้รับ: {GetMoney} / {quotaMoney}฿";
-        AudioManager.instance.PlaySFX(5);
         
+        
+        if(isGameOver) return;
+        AudioManager.instance.PlaySFX(5);
         isGameOver = true;
     }
     public void GameOver()
