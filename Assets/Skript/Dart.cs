@@ -29,7 +29,6 @@ public class Dart : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.GetComponent<Balloon>()) return;
-
         if (other.gameObject.CompareTag("DartStick")) this.transform.SetParent(other.transform);
 
         if (other.gameObject.CompareTag("Furina"))
@@ -40,6 +39,7 @@ public class Dart : MonoBehaviour
             SetAnim(other.gameObject.GetComponentInParent<Animator>(), "isAttacked", false, 10);
         }
         
+        AudioManager.instance.PlaySFX(7);
         FreezeRB();
     }
 

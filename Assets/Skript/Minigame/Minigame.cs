@@ -117,14 +117,15 @@ public class Minigame : MonoBehaviour
         instructionText.gameObject.SetActive(false);
     }
 
-    protected void DropRewards()
+    protected virtual void DropRewards()
     {
+        Debug.Log("Drop Reward!");
         int randomRewardIndex = Random.Range(0, rewards.Length);
         
         ItemPrefab reward = Instantiate(PlayerController.instance.itemPrefab, rewardDropParent.position,
             Quaternion.identity, rewardDropParent).GetComponent<ItemPrefab>();
         
         reward.Init(rewards[randomRewardIndex]);
-
+        AudioManager.instance.PlaySFX(4);
     }
 }

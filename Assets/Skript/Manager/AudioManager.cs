@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -18,4 +19,5 @@ public class AudioManager : MonoBehaviour
     {
         sfxSource.PlayOneShot(sfx[sfxIndex].clip);
     }
+
 }

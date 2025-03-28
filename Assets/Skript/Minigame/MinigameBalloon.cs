@@ -30,6 +30,7 @@ public class MinigameBalloon : Minigame
     protected override void Update()
     {
         base.Update();
+        if (ballonPopped >= 3) DropRewards();
     }
 
     private void Init()
@@ -68,26 +69,33 @@ public class MinigameBalloon : Minigame
 
             ballonPopped = 0;
             ShowInstruction("ใช้ลูกดอก 3 ลูกปาลูกโป่ง\nให้แตก 3 ลูก เพื่อรับรางวัล");
-        }
+        } else PlayerData.instance.GameOver();
     }
 
     public void AddDart()
     {
         dartShooted++;
+        Debug.Log($"Added Dart {dartShooted}/{maxDart}");
         if (dartShooted >= maxDart)
         {
-            dartShooted = 0;
             
             ResetGame();
-            
-            canStart = true;
         }
     }
 
     protected override void ResetGame()
     {
-        if (ballonPopped >= 3) DropRewards();
-        ballonPopped = 0;
+        dartShooted = 0;
+            
+        canStart = true;
+        
         base.ResetGame();
+        if(!PlayerData.instance.HaveEnoughMoney(playCost)) PlayerData.instance.GameOver();
+    }
+
+    protected override void DropRewards()
+    {
+        ballonPopped = 0;
+        base.DropRewards();
     }
 }

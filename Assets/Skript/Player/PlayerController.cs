@@ -104,6 +104,7 @@ public class PlayerController : MonoBehaviour
         mainHandPrefab = Instantiate(mainHandItem.itemPrefab, handParent.transform.position,
             handParent.transform.rotation, handParent);
 
+        AudioManager.instance.PlaySFX(2);
         InitDart();
     }
 
@@ -213,6 +214,8 @@ public class PlayerController : MonoBehaviour
             projectileItem.ThrowDart(playerCamera.forward, throwForce);
             MinigameBalloon.instance.AddDart();
             mainHandPrefab = null;
+            
+            AudioManager.instance.PlaySFX(8);
         }
     }
 
