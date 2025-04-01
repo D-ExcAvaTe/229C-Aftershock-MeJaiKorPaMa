@@ -14,14 +14,16 @@ public class Dart : MonoBehaviour
         FreezeRB();
     }
 
-    public void ThrowDart(Vector3 facing,float throwForce)
+    public void ThrowDart(Vector3 facing,float throwAcc)
     {
         isThrowed = true;
         
         UnfreezeRB();
         this.transform.parent = null;
         
-        rb.AddForce(facing * throwForce);
+        float dartMass = rb.mass;
+        Vector3 newThrowForce = facing.normalized * dartMass * throwAcc;
+        rb.AddForce(newThrowForce, ForceMode.Force);
 
         Destroy(this.gameObject, destroyDelay);
     }

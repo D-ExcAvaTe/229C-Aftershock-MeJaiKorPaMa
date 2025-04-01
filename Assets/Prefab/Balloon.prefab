@@ -105,6 +105,7 @@ MonoBehaviour:
   randomMinPopSpeed:
   - 6
   - 10
+  minigame: {fileID: 0}
 --- !u!136 &4035331267976846970
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -112,7 +113,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3199033745089053776}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2e0830dcc4aee3847904586d3382b7cf, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
